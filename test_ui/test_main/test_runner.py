@@ -11,6 +11,7 @@ class TestToDo:
     last_element_before_creating = ""
     last_element_after_creating = ""
 
+
     def test_ind(self):
         home_page = HomePage(self.chrome)
         title_text = home_page.get_main_title_text()
@@ -27,7 +28,7 @@ class TestToDo:
             rows = self.chrome.find_elements_by_tag_name("tr")
             self.last_element_before_creating = rows[-1].text
 
-        # Добавляем новый елемент
+        # Добавляем новый елемент.
         home_page.click_create()
         create_page = CreateEditPage(self.chrome)
         time.sleep(2)
