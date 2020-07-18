@@ -1,12 +1,9 @@
 pipeline {
     agent none
-
     stages {
-
-        stage ('Hello') {
-            agent any
-
+        stage ('build') {
             steps {
+                echo "Hello World!"
                 sh 'cd /home/ec2-user/my-flasktodo-tests'
                 sh 'git checkout master'
                 sh 'git pull'
