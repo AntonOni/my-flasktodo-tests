@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import pytest
 from elements.home_page import HomePage
 from elements.create_edit_page import CreateEditPage
