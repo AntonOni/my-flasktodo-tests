@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('build') {
             steps {
-                dir ('/home/ec2-user/my-flasktodo-tests'){
+                dir ('/home/jenkins'){
                     sh 'pwd'
                     sh 'python3 -m pip install --user -r requirements.txt'
                     sh 'cd /test_ui/test_main'
