@@ -3,10 +3,11 @@ pipeline {
     stages {
         stage ('test') {
             steps {
-                dir ('/home/jenkins/my-flasktodo-tests'){
+//                 dir ('/home/jenkins/my-flasktodo-tests'){
                     sh 'sudo apt install python3-pip'
+                    sh 'cd var/lib/jenkins/workspace/automation_to_do'
                     sh 'pip3 install -r requirements.txt'
-                    sh 'cd ./test_ui/test_main'
+                    sh 'cd /var/lib/jenkins/workspace/automation_to_do/test_ui/test_main/'
                     sh 'python -m pytest /var/lib/jenkins/workspace/automation_to_do/test_ui/test_main/test_runner.py'
                 }
             }
