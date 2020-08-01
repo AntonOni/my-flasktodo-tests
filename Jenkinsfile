@@ -13,8 +13,7 @@ pipeline {
 // если sh один с несколькими командами то все действия выполняются в одной консоли
                     sh """
                     cd /var/lib/jenkins/workspace/automation_to_do
-                    sudo -s
-                    source venv/bin/activate
+                    -s source venv/bin/activate
                     pip3 install -r requirements.txt
                     cd /var/lib/jenkins/workspace/automation_to_do/test_ui/test_main/
                     python3 -m pytest test_runner.py
