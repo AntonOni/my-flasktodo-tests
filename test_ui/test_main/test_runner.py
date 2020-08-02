@@ -85,8 +85,9 @@ class TestToDo:
             time.sleep(5)
             if first_table_row:
                 first_table_row_text = first_table_row.get_attribute("innerHTML")
-                print(first_table_row_text)
                 assert " new_one" in first_table_row_text
+        else:
+            assert 1 == 2
 
 
     def test_delete_element(self):
