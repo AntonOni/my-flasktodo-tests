@@ -3,9 +3,6 @@ pipeline {
     stages {
         stage ('test') {
             steps {
-//                 dir ('/home/jenkins/my-flasktodo-tests'){
-//                     sh 'cd /var/lib/jenkins/workspace/automation_to_do'
-//                     sh 'pip3 install -r requirements.txt'
 // каждый новый sh с командой открывает новое окно в консоли для выполнения действия
 //                     sh 'cd /var/lib/jenkins/workspace/automation_to_do/test_ui/test_main/'
 //                     sh 'python3 -m pytest /var/lib/jenkins/workspace/automation_to_do/test_ui/test_main/test_runner.py'
