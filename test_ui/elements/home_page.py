@@ -6,10 +6,10 @@ import time
 class HomePage:
     def __init__(self, chrome):
         self.chrome = chrome
-        self.create_btn_selector = "body > div > a"
-        self.edit_btn_selector = "#edit"
-        self.delete_btn_selector = "#delete"
-        self.show_task_btn_selector = "#show"
+        self.create_btn_xpath = "/html/body/div/a"
+        self.edit_btn_xpath = "/html/body/div/button[1]"
+        self.delete_btn_xpath = "/html/body/div/button[2]"
+        self.show_task_btn_xpath = "/html/body/div/button[3]"
 
 
         self.delete_btn_class = "btn btn-danger"
@@ -27,7 +27,7 @@ class HomePage:
         return title_text.get_attribute('innerText')
 
     def click_create(self):
-        create_page = self.chrome.find_element_by_css_selector(self.create_btn_selector)
+        create_page = self.chrome.find_element_by_xpath(self.create_btn_xpath)
         create_page.click()
 
     def find_paginate_buttons(self):
@@ -37,12 +37,13 @@ class HomePage:
     def click_paginate_button(self, paginate_button):
         paginate_button.click()
 
+
     def find_all_table_ids(self):
         all_table_ids = self.chrome.find_elements_by_class_name(self.table_ids)
         return all_table_ids
 
     def click_edit(self):
-        edit_page = self.chrome.find_element_by_css_selector(self.edit_btn_selector)
+        edit_page = self.chrome.find_element_by_xpath(self.edit_btn_xpath)
         edit_page.click()
 
     def find_first_table_row(self):
@@ -50,7 +51,7 @@ class HomePage:
         return first_table_row
 
     def click_delete(self):
-        delete_page = self.chrome.find_element_by_css_selector(self.delete_btn_selector)
+        delete_page = self.chrome.find_element_by_xpath(self.delete_btn_xpath)
         delete_page.click()
 
     def accept_alert(self):
@@ -58,7 +59,7 @@ class HomePage:
         alert.accept()
 
     def click_show_task_btn(self):
-        show_task = self.chrome.find_element_by_css_selector(self.show_task_btn_selector)
+        show_task = self.chrome.find_element_by_xpath(self.show_task_btn_xpath)
         show_task.click()
 
 

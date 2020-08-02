@@ -60,7 +60,6 @@ class TestToDo:
             assert (id_before_creating+1) == id_after_creating
 
     def test_edit_element(self):
-        print("Start test 3")
         home_page = HomePage(self.chrome)
         time.sleep(5)
         paginate_buttons = home_page.find_paginate_buttons()
@@ -117,7 +116,6 @@ class TestToDo:
         assert not fifth_table_id_before == fifth_table_id_after
 
     def test_show_task(self):
-        print("Start test 5")
         ninth_table_id_before = None
 
         home_page = HomePage(self.chrome)
