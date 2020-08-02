@@ -14,11 +14,13 @@ class TestToDo:
 
 
     def test_ind(self):
+        print("Start test 1")
         home_page = HomePage(self.chrome)
         title_text = home_page.get_main_title_text()
         assert title_text == "To Do List"
 
     def test_create_element(self):
+        print("Start test 2")
         # Берем последний элемент до добавления
         home_page = HomePage(self.chrome)
         time.sleep(5)
@@ -58,8 +60,14 @@ class TestToDo:
             assert (id_before_creating+1) == id_after_creating
 
     def test_edit_element(self):
+        print("Start test 3")
         home_page = HomePage(self.chrome)
         time.sleep(5)
+        paginate_buttons = home_page.find_paginate_buttons()
+        if len(paginate_buttons) > 1:
+            paginate_buttons[1].click()
+            time.sleep(3)
+
         all_table_ids = home_page.find_all_table_ids()
         if len(all_table_ids) > 0:
             first_table_id = all_table_ids[0]
@@ -83,6 +91,7 @@ class TestToDo:
 
 
     def test_delete_element(self):
+        print("Start test 4")
         fifth_table_id_before = None
         fifth_table_id_after = None
 
@@ -108,6 +117,7 @@ class TestToDo:
         assert not fifth_table_id_before == fifth_table_id_after
 
     def test_show_task(self):
+        print("Start test 5")
         ninth_table_id_before = None
 
         home_page = HomePage(self.chrome)

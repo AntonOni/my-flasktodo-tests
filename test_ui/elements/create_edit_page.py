@@ -8,7 +8,8 @@ class CreateEditPage:
         self.task_name_id = "taskName"
         self.descreption_id = "taskDescription"
         # self.submit_btn_selector = "body > div > form > input"
-        self.submit_btn_class_name = "btn btn-primary"
+        # self.submit_btn_class_name = "btn btn-primary"
+        self.submit_btn_xpath = "/html/body/div/form/input"
         self.cancel_btn_class = "btn btn-danger"
 
     def close_alert(self):
@@ -24,5 +25,5 @@ class CreateEditPage:
         descreption.send_keys("Some descreption also here" + edited)
 
     def click_submit_btn(self):
-        submit_btn = self.chrome.find_element_by_css_selector(self.submit_btn_class_name)
+        submit_btn = self.chrome.find_element_by_xpath(self.submit_btn_xpath)
         submit_btn.click()
