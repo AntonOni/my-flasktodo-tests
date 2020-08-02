@@ -8,6 +8,7 @@ from selenium.webdriver.chrome.options import Options
 def driver_setup(request):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
     chrome = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
     # chrome = webdriver.Chrome(ChromeDriverManager().install())
     # chrome.maximize_window()
