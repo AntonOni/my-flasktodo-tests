@@ -10,9 +10,9 @@ pipeline {
 // если sh один с несколькими командами то все действия выполняются в одной консоли
                     sh """
                     cd /var/lib/jenkins/workspace/automation_to_do
-                    pip3 install -r requirements.txt
+                    pip install -r requirements.txt
                     cd /var/lib/jenkins/workspace/automation_to_do/test_ui/test_main/
-                    python3 -m pytest test_runner.py
+                    python3.7 -m pytest test_runner.py
                     """
             }
         }
