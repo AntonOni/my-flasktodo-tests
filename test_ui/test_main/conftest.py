@@ -10,8 +10,11 @@ def driver_setup(request):
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
     chrome = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+
+    # For UI Chrome
     # chrome = webdriver.Chrome(ChromeDriverManager().install())
     # chrome.maximize_window()
+
     chrome.get("http://0.0.0.0:5000")
     chrome.implicitly_wait(10)
     request.cls.chrome = chrome

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import allure
 import pytest
 from elements.home_page import HomePage
 from elements.create_edit_page import CreateEditPage
@@ -12,13 +13,14 @@ class TestToDo:
     last_element_before_creating = ""
     last_element_after_creating = ""
 
-
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_ind(self):
         print("Start test 1")
         home_page = HomePage(self.chrome)
         title_text = home_page.get_main_title_text()
         assert title_text == "To Do List"
 
+    @allure.severity(allure.severity_level.NORMAL)
     def test_create_element(self):
         print("Start test 2")
         # Берем последний элемент до добавления
@@ -59,6 +61,7 @@ class TestToDo:
                 id_after_creating = int(id_after_creating[0])
             assert (id_before_creating+1) == id_after_creating
 
+    @allure.severity(allure.severity_level.NORMAL)
     def test_edit_element(self):
         home_page = HomePage(self.chrome)
         time.sleep(5)
@@ -89,7 +92,7 @@ class TestToDo:
         else:
             assert 1 == 2
 
-
+    @allure.severity(allure.severity_level.NORMAL)
     def test_delete_element(self):
         print("Start test 4")
         fifth_table_id_before = None
@@ -116,6 +119,8 @@ class TestToDo:
 
         assert not fifth_table_id_before == fifth_table_id_after
 
+
+    @allure.severity(allure.severity_level.NORMAL)
     def test_show_task(self):
         ninth_table_id_before = None
 
