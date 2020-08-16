@@ -11,7 +11,7 @@ pipeline {
                     cd /var/lib/jenkins/workspace/automation_to_do
                     pip install -r requirements.txt
                     cd /var/lib/jenkins/workspace/automation_to_do/test_ui/test_main/
-                    python3.7 -m pytest --alluredir="/var/lib/jenkins/workspace/automation_to_do/reports" test_runner.py
+                    python3.7 -m pytest --alluredir="/var/lib/jenkins/workspace/automation_to_do/allure-results" test_runner.py
                     """
                     script {
                             allure([
@@ -23,7 +23,7 @@ pipeline {
                                     ])
                             }
                    sh """
-                   python3.7 -m allure serve /var/lib/jenkins/workspace/automation_to_do/reports
+                   python3.7 -m allure serve /var/lib/jenkins/workspace/automation_to_do/allure-results
                    """
                    }
         }
