@@ -22,6 +22,9 @@ pipeline {
                                     results: [[path: '/var/lib/jenkins/workspace/automation_to_do/reports']]
                                     ])
                             }
+                   sh """
+                   allure serve /var/lib/jenkins/workspace/automation_to_do/reports
+                   """
                    }
         }
     }
