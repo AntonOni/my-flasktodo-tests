@@ -23,7 +23,7 @@ pipeline {
                                     ])
                             }
                    sh """
-                   allure serve /var/lib/jenkins/workspace/automation_to_do/reports
+                   python3.7 -m allure serve /var/lib/jenkins/workspace/automation_to_do/reports
                    """
                    }
         }
