@@ -19,7 +19,7 @@ pipeline {
                                     jdk: '',
                                     properties: [],
                                     reportBuildPolicy: 'ALWAYS',
-                                    results: [[path: '/var/lib/jenkins/workspace/automation_to_do/reports']]
+                                    results: [[path: '/var/lib/jenkins/workspace/automation_to_do/allure-results']]
                                     ])
                             }
                    sh """
